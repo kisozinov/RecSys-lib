@@ -3,6 +3,18 @@ recsys-gcn-gan
 
 This repository implements GCN and GAN architectures for recommeder systems.
 
+LightFM
+------------
+Run data processing scripts to turn raw data from (../raw) into
+        cleaned data ready to be analyzed (saved in ../processed) by this command:
+``` python recsys-gcn-gan/data/make_movielens.py data/raw/ml-10M100K/ratings.dat data/interim/train.npz data/interim/test.npz  ```
+
+Runs train scripts for lightfm model:
+``` python recsys-gcn-gan/models/lightfm_train.py data/interim/train.npz models/lightfm_movielens.pickle ```
+
+Returns the evaluation metric results:
+``` python recsys-gcn-gan/models/lightfm_predict.py models/lightfm_movielens.pickle data/interim/test.npz ```
+
 Project Organization
 ------------
 
