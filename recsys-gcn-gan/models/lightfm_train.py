@@ -17,16 +17,15 @@ import pickle
 def main(input_data_filepath, output_model_filepath):
     """
     Runs train scripts for lightfm model.
-    default run: python recsys-gcn-gan/models/lightfm_train.py /
-    data/interim/train.npz models/lightfm_movielens.pickle
+    default run: python recsys-gcn-gan/models/lightfm_train.py data/interim/train.npz models/lightfm_movielens.pickle
     """
     logger = logging.getLogger(__name__)
     logger.info('train the model')
 
-    train_data = sparse.load_npz(input_data_filepath)
+    train_sparse = sparse.load_npz(input_data_filepath)
 
     model = LightFM(loss='warp')
-    model.fit(train_data, epochs=10, num_threads=4)
+    model.fit(train_sparse, epochs=20, num_threads=4, verbose=True)
     with open(output_model_filepath, 'wb') as file:
         pickle.dump(model, file, protocol=pickle.HIGHEST_PROTOCOL)
 

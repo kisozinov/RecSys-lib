@@ -18,9 +18,7 @@ import pickle
 def main(input_model_filepath, input_data_filepath, output_sample_filepath=None):
     """
     Returns the prediction of model.
-    defaul run: python recsys-gcn-gan/models/lightfm_predict.py /
-    models/lightfm_movielens.pickle /
-    data/interim/test.npz /
+    defaul run: python recsys-gcn-gan/models/lightfm_predict.py models/lightfm_movielens.pickle data/interim/test.npz
 
     """
     logger = logging.getLogger(__name__)
@@ -29,9 +27,9 @@ def main(input_model_filepath, input_data_filepath, output_sample_filepath=None)
     with open(input_model_filepath, "rb") as input_file:
         model = pickle.load(input_file)
 
-    test_data = sparse.load_npz(input_data_filepath)
-    test_precision = precision_at_k(model, test_data, k=5).mean()
-    test_recall = recall_at_k(model, test_data, k=5).mean()
+    test_sparse = sparse.load_npz(input_data_filepath)
+    test_precision = precision_at_k(model, test_sparse, k=5).mean()
+    test_recall = recall_at_k(model, test_sparse, k=5).mean()
     print(f"Precision at 5 is: {test_precision}")
     print(f"Recall at 5 is: {test_recall}")
 
