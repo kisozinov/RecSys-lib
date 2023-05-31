@@ -76,7 +76,7 @@ target/
 .ipynb_checkpoints/
 
 # exclude data from source control by default
-/data/
+/data/interim
 
 # Mac OS-specific storage files
 .DS_Store
@@ -87,3 +87,15 @@ target/
 
 # Mypy cache
 .mypy_cache/
+
+# Amazme logs
+log/
+
+# what is it?
+recsys_gcn_gan.egg-info/
+
+#old pics
+lightgcn*
+
+#deprecated
+images/

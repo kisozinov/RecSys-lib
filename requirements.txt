@@ -11,3 +11,10 @@ python-dotenv>=0.5.1
 
 # personal
 lightfm
+numpy
+pandas
+implicit
+matplotlib
+torch
+tqdm
+scipy
