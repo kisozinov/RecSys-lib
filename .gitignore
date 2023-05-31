@@ -95,7 +95,10 @@ log/
 recsys_gcn_gan.egg-info/
 
 #old pics
-lightgcn*
+#lightgcn*
+lightgcn_curve.png 
+lightgcn_gowalla.png 
+lightgcn_results.png
 
 #deprecated
 images/
