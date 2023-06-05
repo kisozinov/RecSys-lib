@@ -58,17 +58,19 @@ Project Organization (DEPRECATED)
     │
     ├── recsys-gcn-gan     <- Source code for use in this project.
     │   ├── __init__.py    <- Makes src a Python module
+    │   │    
+    │   ├── main.py        <- Executable script to run train/test    
     │   │
     │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
+    │   │   └── dataloader.py
     │   │
     │   ├── features       <- Scripts to turn raw data into features for modeling
     │   │   └── build_features.py
     │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
     │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
+    │   │   ├── lightgcn.py
+    │   │   └── lightgcn_cfg.py
     │   │
     │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
     │       └── visualize.py
