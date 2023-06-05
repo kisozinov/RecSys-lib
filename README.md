@@ -1,25 +1,30 @@
-recsys-gcn-gan
+recsys-lib
 ==============================
 
-This repository implements GCN and GAN architectures for recommeder systems.
+This repository implements ALS and LightFM baselines, and also LightGCN model architectures for recommender systems.
 
-LightFM
-------------
-Run data processing scripts to turn raw data from (../raw) into
-        cleaned data ready to be analyzed (saved in ../processed) by this command:
+### Usage
+You need to go to the `/recsys-gcn-gan` directory:
 ```
-python recsys-gcn-gan/data/make_movielens.py data/raw/ml-10M100K/ratings.dat data/interim/train.npz data/interim/test.npz
+cd recsys-gcn-gan/
 ```
-
-Runs train scripts for lightfm model:
+Also you need `amazmemllib` package to get ALS/LightFM metrics. The command line to start using project is the following:
 ```
-python recsys-gcn-gan/models/lightfm_train.py data/interim/train.npz models/lightfm_movielens.pickle
+python main.py [COMMAND] [OPTIONS]
 ```
 
-Returns the evaluation metric results:
-```
-python recsys-gcn-gan/models/lightfm_predict.py models/lightfm_movielens.pickle data/interim/test.npz
-```
+### Commands
+* `train` - Launch model training on the selected dataset and saving binaries/checkpoints to future usage (`models/`). If LightGCN, additionally plot loss & metrics curves (saving to `reports/figures`)
+* `evaluate` - Print evaluation metrics of the selected model on the selected dataset. 
+
+### Options
+The set of options is the same for both commands. 
+* `-m`: Model name ('als', 'lfm', 'lgcn')
+* `-d`: Dataset name ('ml-1m', 'gowalla', 'yelp2018', 'amazon-books')
+
+### Configurate
+Baseline models (ALS, LightFM) can be configured directly in initialization in `recsys-gcn-gan/main.py`.
+If you want to change LightFM configuration, edit `recsys-gcn-gan/models/lightgcn_cfg.py`
 
 Project Organization
 ------------
