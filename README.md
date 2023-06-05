@@ -26,7 +26,7 @@ The set of options is the same for both commands.
 Baseline models (ALS, LightFM) can be configured directly in initialization in `recsys-gcn-gan/main.py`.
 If you want to change LightFM configuration, edit `recsys-gcn-gan/models/lightgcn_cfg.py`
 
-Project Organization (DEPRECATED)
+Project Organization
 ------------
 
     ├── LICENSE
