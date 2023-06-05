@@ -4,7 +4,7 @@ recsys-lib
 This repository implements ALS and LightFM baselines, and also LightGCN model architectures for recommender systems.
 
 ### Usage
-You need to go to the `/recsys-gcn-gan` directory:
+You need to go to the `recsys-gcn-gan/` directory:
 ```
 cd recsys-gcn-gan/
 ```
@@ -14,7 +14,7 @@ python main.py [COMMAND] [OPTIONS]
 ```
 
 ### Commands
-* `train` - Launch model training on the selected dataset and saving binaries/checkpoints to future usage (`models/`). If LightGCN, additionally plot loss & metrics curves (saving to `reports/figures`)
+* `train` - Launch model training on the selected dataset and saving binaries/checkpoints to future usage (`models/`). If LightGCN, additionally plot loss & metrics curves (saving to `reports/figures/`)
 * `evaluate` - Print evaluation metrics of the selected model on the selected dataset. 
 
 ### Options
